@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
     end
 
     def new
-       @place = Place.new
+      @place = Place.new
     end
 
     def create
@@ -15,19 +15,25 @@ class PlacesController < ApplicationController
     end
 
     def show
-    @place = Place.find(params[:id])
+     @place = Place.find(params[:id])
     end
      
      #action to find edit places to edit
      def edit
       @place = Place.find(params[:id])
-     
      end
      
      #action to update places
      def update
       @place = Place.find(params[:id])
       @place.update_attributes(place_params)
+      redirect_to root_path
+     end
+     
+     #delete places action
+     def destroy
+      @place = Place.find(params[:id])
+      @place.destroy
       redirect_to root_path
      end
 
