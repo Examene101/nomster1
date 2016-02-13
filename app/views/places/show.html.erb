@@ -6,7 +6,9 @@
  <p><%= @place.description %></p>
 <!-- link to edit logged in user places-->
  <div class="pull right">
-  <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
+  <% if current_user && current_user == @place.user %>
+     <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
+  <% end %>
   <!-- link to delete button and message -->
   <%= link_to "Destoy", place_path(@place), method:
   :delete, data: {confirm: "Are yousure you want to delete this?"}, class: "btn btn-danger" %>
