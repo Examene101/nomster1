@@ -1,7 +1,12 @@
 <!-- place name , address, styling and description -->
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-<h1><%= @place.name%></h1>
-<i><%= @place.address %></i>
-<br/><br/>
-<p><%= @place.description %></p>
+ <h1><%= @place.name%></h1>
+ <i><%= @place.address %></i>
+ <br/><br/>
+ <p><%= @place.description %></p>
+<!-- link to edit logged in user places-->
+ <div class="pull right">
+  <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
+ </div>
+
 </div>
