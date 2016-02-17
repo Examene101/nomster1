@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 #add rails_12factor
 gem 'rails_12factor', group: :production
 
+# environment variable
+gem "figaro", ">= 1.0.0"
+
 #solution for geocoding
 gem "geocoder"
 
