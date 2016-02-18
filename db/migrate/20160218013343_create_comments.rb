@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration
   	# field to keep track of messsage and ratiing of comment 
     create_table :comments do |t|
     	t.text :message
-    	t.string :ratiing
+    	t.string :rating
 
     	t.integer :user_id
     	t.integer :place_id
