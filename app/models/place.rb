@@ -2,6 +2,7 @@ class Place < ActiveRecord::Base
 	# validates simple_form
 	belongs_to :user
 	has_many :comments
+	has_many :photos
     #validate address
 	geocoded_by :address
     after_validation :geocode

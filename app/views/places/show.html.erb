@@ -50,7 +50,6 @@ function initMap() {
 
 <div class="clear"></div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -58,6 +57,7 @@ function initMap() {
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Add a Comment</h4>
+
       </div>
      
         <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
@@ -80,13 +80,22 @@ function initMap() {
 <!-- spacing on edges -->
 <div class="col-xs-10 col-xs-offset-1">
 <h1 class= 'pull-left'> Comments</h1>
+
 <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
   Add a comment
 </button>
-</div>
+
 
 <div class="clear"></div>
+<%= simple_form_for @comment, url: '#' do |f| %>
+ <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
+</div>
+
+
+<div class="clear"></div>
+
 
 <% @place.comments.each do |comment| %>
 <div class= "col-xs-12 col-sm-6">
@@ -97,5 +106,9 @@ function initMap() {
         <%= comment.message %>
       <small><%= comment.user.email %></small>
     </blockquote>
-  </div>
+    </div>
+
 <% end %>
+
+
+
