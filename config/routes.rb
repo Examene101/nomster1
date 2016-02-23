@@ -30,6 +30,8 @@ Nomster1::Application.routes.draw do
   resources :places do
     resources :comments, only: :create
   end
+  # route for users page
+  resources :users, only: :show
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
