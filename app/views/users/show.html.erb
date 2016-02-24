@@ -1,10 +1,10 @@
 <div class="booyah-box">
+	<div class="clear"></div>
  <!-- user image to left side -->
  <div class="col-xs-4">
  <!-- icon for use page -->
 	<%= image_tag "user.png"%>
  </div>
-
 <!-- move metrics to right side -->
  <div class="col-xs-8">
  <h1><%= @user.email%></h1>
@@ -18,3 +18,21 @@
  </div>
   <div class="clear"></div>
 </div>
+
+<br /><br />
+<!-- contains user Comments -->
+<h1 class="text-center">My Comments</h1>
+<br /><br />
+<% @user.comments.each do |comment| %>
+<div class="col-xs-12 col-sm-6">
+	<!-- name of place comment, link to place -->
+	<h2 class="text center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+  <blockquote>
+    <% if comment.humanized_rating.present? %>
+      <b><%= comment.humanized_rating %></b> -
+    <% end %>
+    <%= comment.message %>
+    <small><%= comment.user.email %></small>
+  </blockquote>
+</div>
+<% end %>
