@@ -1,12 +1,17 @@
 source 'https://rubygems.org'
 #add rails_12factor
 gem 'rails_12factor', group: :production
-
+#carrierwave
+gem 'carrierwave'
 # environment variable
 gem "figaro", ">= 1.0.0"
 
 #solution for geocoding
 gem "geocoder"
+
+# carrierwave to communicate the amazon
+gem "fog", "~> 1.3.1"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'

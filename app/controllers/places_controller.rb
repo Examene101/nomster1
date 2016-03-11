@@ -10,6 +10,9 @@ class PlacesController < ApplicationController
       @place = Place.new
     end
 
+    
+
+
     def create
     	@place = current_user.places.create(place_params)
       if @place.valid?
