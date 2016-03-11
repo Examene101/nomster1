@@ -53,6 +53,10 @@
       <small><%= place.comments.last.user.email %></small>
     </blockquote>
   </div>
+
+  <% if place.photos.present? && place.photos.last.picture.present? %>
+         <p><%= image_tag place.photos.order("id ASC").last.picture %></p><br />
+      <% end %>
 <% end %>
 <%end %>
   <%= will_paginate @places %>
